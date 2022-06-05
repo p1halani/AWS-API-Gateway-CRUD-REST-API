@@ -62,6 +62,20 @@ functions:
         Action:
           - "dynamodb:UpdateItem"
         Resource: !GetAtt PostsTable.Arn
+  deletePost:
+    handler: src/deletePost.handler
+    name: delete-post
+    memorySize: 128 # mb
+    timeout: 5 # seconds
+    events:
+      - http:
+          path: post/{postId}
+          method: DELETE
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - "dynamodb:DeleteItem"
+        Resource: !GetAtt PostsTable.Arn
 
 resources:
   Resources:
