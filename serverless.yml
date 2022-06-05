@@ -19,6 +19,22 @@ custom:
 plugins:
   - serverless-iam-roles-per-function
 
+functions:
+  createPost:
+    handler: src/createPost.handler
+    name: create-post
+    memorySize: 128 # MB
+    timeout: 5 # seconds
+    events:
+      - http:
+          path: post
+          method: POST
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - "dynamodb:PutItem"
+        Resource: !GetAtt PostsTable.Arn
+
 resources:
   Resources:
     PostsTable:
