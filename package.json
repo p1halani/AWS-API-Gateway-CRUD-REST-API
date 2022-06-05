@@ -1,0 +1,25 @@
+{
+  "name": "aws-api-gateway-crud-rest-api",
+  "version": "1.0.0",
+  "description": "DynamoDB CRUD API using API Gateway and AWS Lambda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p1halani/AWS-API-Gateway-CRUD-REST-API.git"
+  },
+  "author": "Parth Halani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p1halani/AWS-API-Gateway-CRUD-REST-API/issues"
+  },
+  "homepage": "https://github.com/p1halani/AWS-API-Gateway-CRUD-REST-API#readme",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.100.0",
+    "@aws-sdk/util-dynamodb": "^3.100.0",
+    "eslint": "^8.17.0",
+    "serverless-iam-roles-per-function": "^3.2.0"
+  }
+}
