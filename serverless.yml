@@ -48,6 +48,20 @@ functions:
         Action:
           - "dynamodb:PutItem"
         Resource: !GetAtt PostsTable.Arn
+  updatePost:
+    handler: src/updatePost.handler
+    name: update-post
+    memorySize: 128 # MB
+    timeout: 5 # seconds
+    events:
+      - http:
+          path: post/{postId}
+          method: PUT
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - "dynamodb:UpdateItem"
+        Resource: !GetAtt PostsTable.Arn
 
 resources:
   Resources:
