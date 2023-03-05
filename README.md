@@ -4,6 +4,8 @@
 
 ![API Gateway](./static/img/API%20Gateway%20CRUD.drawio.png)
 
+## Video recording - https://www.loom.com/share/7cf350a819764779be24307add1deb7d
+
 ## Services used.
   - Serverless Framework for deployment.
   - GitHub actions for continuous integration and continuous delivery.
